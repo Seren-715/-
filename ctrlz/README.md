@@ -70,6 +70,6 @@ node render.mjs --ss 2 --samples 16             # 全片 -> out/chunks/*.mkv（F
 ## 如实说明
 
 - 没有 Blender（云端装不上），Clawd 由代码建模，不是 GLB。
-- 云端没有 GPU：只用软件渲染做了每帧 1 采样的 640×360 全片预览（`preview/ctrlz_preview.mp4`）和定格抽查，**16 采样的最终画质只在两张 1080p 定格上看过**（`preview/`）。
+- 云端没有 GPU：只用软件渲染做了定格抽查，**16 采样的最终画质只在三张 1080p 定格上看过**（`preview/still_*.jpg`）。全片渲染没有在云端跑完，第一次完整渲染会在你电脑上；流程的每一步都在云端单独验证过：逐帧渲染→FFV1 分块，以及 `--mux`（用两段测试分块混出了 1920×1080 60fps H.264 + AAC 立体声、正好 19.000 秒的 MP4）。
 - 声音我听不到，只做了测量。
 - 字体：Inter Display 与 JetBrains Mono（SIL Open Font License 1.1），子集化后内嵌。
